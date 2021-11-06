@@ -1,0 +1,13 @@
+
+
+  .cards{
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+  }
+  .homepage{
+    background-color:rgb(250, 224, 224);
+  }
+  
+  

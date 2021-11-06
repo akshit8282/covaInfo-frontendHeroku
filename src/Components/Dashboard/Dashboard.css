@@ -1,0 +1,46 @@
+.container1{
+  display: flex;
+  flex-direction: column;
+  
+  align-items:center;
+  justify-content: center;
+  
+}
+.maincontainer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+.video-thumbnail1{
+height: 300px;
+width: 300px;
+background-color: black;
+}
+.username1 a{
+  color:grey
+}
+.video-title1{
+  font-size: 1.5rem;
+  border-bottom: 2px solid red;
+  
+  color:black;
+  padding: 5px;
+  margin-top: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.video-thumbnail1 img{
+  height: 300px;
+  width: 300px;
+  }
+  @media screen and (max-width:1143px){
+    .video-thumbnail1{
+      height: 200px;
+      width: 200px;
+      background-color: black;
+      }
+      .video-thumbnail1 img{
+        height: 200px;
+        width: 200px;
+        }
+  }

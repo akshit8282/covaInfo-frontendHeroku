@@ -1,0 +1,18 @@
+.feedback{
+    background-color: rgb(2, 2, 31);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+flex-wrap: wrap;
+    color:white
+}
+#mail{
+   font-size: xx-large;
+    
+}
+#mail a{
+    color: antiquewhite;
+    border: 2px solid red;
+    border-radius: 20px;
+    padding: 7px;
+}

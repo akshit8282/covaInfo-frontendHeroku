@@ -1,0 +1,87 @@
+#videoSectiondiv{
+display: flex;
+justify-content: space-around;
+}
+h1{
+    text-align: center;
+    font-family: monospace;
+}
+#awarenessdiv{
+    text-align: center;
+    background-color:rgb(228, 208, 211);
+    height: 500px;
+   margin-top:80px;
+   
+    color:rgb(99, 60, 66);
+   
+    
+
+}
+#awarenessdiv cite{
+    font-family: 'Lobster';
+    font-size: 30px;
+    word-spacing: 4px;
+}
+
+#awarenessdiv p{
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#awarenessdiv h2{
+    text-align: center;
+}
+#awarenessdiv h3{
+    
+    font-family: monospace;
+
+}
+#design1{
+    position: relative;
+
+}
+#design{
+    background-color: pink;
+    width: 300px;
+    height: 500px;
+   border-radius: 80%;
+  position:absolute;
+  top:0;
+  left:-150px;
+
+}
+@media screen and (max-width:1100px) {
+    #videoSectiondiv{
+        display: flex;
+       flex-wrap: wrap;
+        }
+        h1{
+            font-size: smaller;
+            font-size: 9px;
+        }
+    iframe:nth-child(3){
+display: none;
+    }
+    iframe{
+        height: 200px;
+        width: 200px;
+    }
+    #design{
+        background-color: pink;
+        width: 100px;
+        height: 500px;
+       border-radius: 80%;
+      position:absolute;
+      top:0;
+      left:-150px;
+    
+    }
+    #awarenessdiv p{
+        font-size: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    #awarenessdiv cite{
+        font-family: 'Lobster';
+        font-size: 20px;
+        word-spacing: 2px;
+    }
+}

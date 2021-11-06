@@ -1,0 +1,57 @@
+.formsearch{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+input[type=number]{
+    border: 3px solid blue;
+   
+    border-radius: 30px;
+    
+    
+}
+input[type=date]{
+    border: 3px solid blue;
+   
+    border-radius: 30px;
+    
+   
+}
+.cowinlink{
+    text-align: center;
+    color: antiquewhite;
+    background-color:lightslategrey;
+    
+    height: 23px;
+    width: 17rem;
+    margin: auto;
+    
+    margin-bottom: 10px;
+}
+.headingVaccine{
+    text-align: center;
+}
+.infoheading{
+    text-align: center;
+    color: gray;
+}
+#bvaccine{
+    background-color:black;
+    font-size: large;
+    color: azure;
+    display: block;
+    margin: auto;
+padding: 10px;
+margin-top: 10px;
+width:15rem;
+border-radius: 30px;
+}
+@media screen and (max-width:1000px){
+    .formsearch{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+}

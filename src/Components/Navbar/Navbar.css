@@ -1,0 +1,27 @@
+
+.nav{
+    background-color: black;
+
+}
+.navi{
+    background-color: grey;
+}
+.navcss{
+    display: block;
+    margin: auto;
+   text-align: center;
+}
+
+@keyframes symbolrotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+ 
+
