@@ -11,7 +11,7 @@ const Hospitaladdress = (props) => {
     
     useEffect(async () => {
         // Update the document title using the browser API
-        await axios.get('https://cors-anywhere.herokuapp.com/https://coronabeds.jantasamvad.org/covid-facilities.js', {headers: {'Access-Control-Allow-Origin': '*'},
+        await axios.get('https://coronabeds.jantasamvad.org/covid-facilities.js', {headers: {'Access-Control-Allow-Origin': '*'},
 }).then(res=>{
     
  //console.log((res.data.split("=")[1]));
@@ -55,10 +55,13 @@ Object.keys(data).map(k=>{
     })
     const model=loading==true?(<div class="loader"></div>): (
         
-        <div style={{backgroundColor:"lightcyan",height:"90vh"}}>
+        <div style={{backgroundColor:"lightcyan",height:"90vh",width:'104vw',display:'flex',flexDirection:'column'}}>
         <h1 style={{textAlign:'center'}}>{path}</h1>
             {arr}
-            <button style={{width:"50px",borderRadius:"10px",backgroundColor:"darkblue"}}><a style={{textDecoration:"none",color:"white"}} href="/bed">Back</a></button>
+            <div style={{display:'flex',justifyContent:'center'}}>
+            
+            <button style={{width:"80px",borderRadius:"10px",backgroundColor:"darkblue"}}><a style={{textDecoration:"none",color:"white"}} href="/bed">Back</a></button>
+        </div>
         </div>
     );
     return <div style={{backgroundColor:'black',height:'100vh',display:'flex',alignItems:'center',justifyContent:'center'}}>{model}</div>

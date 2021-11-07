@@ -21,11 +21,11 @@ export default function MediaCard(props) {
   <div style={{display:'flex',justifyContent:'space-between'}}>
   <div class="card-body" >
     <h5 class="card-title" style={{fontSize:'1.4rem'}}>{props.confirmedcases}</h5>
-    <p class="card-text" style={{textAlign:'center'}} >123445555</p>
+    <p class="card-text" style={{textAlign:'center'}} >{props.cases}</p>
   </div>
   <div class="card-body">
     <h5 class="card-title"  style={{fontSize:'1.4rem'}}>{props.confirmeddeaths}</h5>
-    <p class="card-text" style={{textAlign:'center'}}>12334455</p>
+    <p class="card-text" style={{textAlign:'center'}}>{props.deaths}</p>
   </div>
   </div>
 </div>

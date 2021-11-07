@@ -7,11 +7,11 @@ import Backdrop from '../Backdrop/Backdrop'
 export class Delhi extends Component {
     
     state={
-        result:'loading data',
-        address:null
+        result:null,
+        
     }
     componentDidMount=()=>{
-        axios.get('https://cors-anywhere.herokuapp.com/https://coronabeds.jantasamvad.org/covid-info.js', {headers: {'Access-Control-Allow-Origin': '*'},
+        axios.get('https://coronabeds.jantasamvad.org/covid-info.js', {headers: {'Access-Control-Allow-Origin': '*'},
     }).then(res=>{
         //console.log(res.data);
      //console.log((res.data.split("=")[1]));
@@ -57,35 +57,38 @@ address:ele
 }*/
 
 
-if(!this.state.result) return <h1>loading</h1>
 
 
-const arr=Object.keys(this.state.result).map(key=>{
-return <div id="table" className="row border p-3"  >
-    <div className="col"><a href={url+key} style={{color:"black",fontSize:"20px"}} key={key}>{key.split(",")}</a></div>
-    <div className="col">{this.state.result[key].total}</div>
-    <div className="col">{this.state.result[key].vacant}</div>
-    <div className="col">{this.state.result[key].last_updated_at}</div>
-</div>
-})
+
+const arr=this.state.result!=null?(Object.keys(this.state.result).map(key=>{
+return <tr  style={{fontSize:'1.1rem'}} >
+    <td ><a  style={{color:'white'}} href={url+key}  key={key}>{key.split(",")}</a></td>
+    <td >{this.state.result[key].total}</td>
+    <td >{this.state.result[key].vacant}</td>
+    <td >{this.state.result[key].last_updated_at}</td>
+</tr>
+})):( <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><i  className="fas fa-spinner fa-spin fa-5x"></i></div>)
 
         return (
             <div>
                <Navbar/>
-               <h3 className="bg-success text-white"><marquee>This Information is taken from Government Website</marquee></h3>
+               <h3 className="bg-success text-white" style={{marginTop:'90px'}}><marquee>This Information is taken from Government Website</marquee></h3>
                <h1>Delhi Hospital Vacant Bed Data</h1>
-               <div className="container-fluid" >
-             <div  >
-            <div className="row bg-secondary text-white mb-3"   >
-<div className="col" style={{fontSize:"30px"}}><b>Hospital</b></div>
-<div className="col" style={{fontSize:"30px"}} ><b>Total Bed</b></div>
-<div className="col" style={{fontSize:"30px"}}><b>Vacant Bed</b></div>
-<div className="col" style={{fontSize:"30px"}}><b>Updated At</b></div>
-            </div>
-            <div style={{height:"10px"}}></div>
+               <div className="container" >
+             
+            <table className="table table-striped table-dark table-lg table-sm table-hover"   >
+                <thead style={{fontSize:'1.3rem',fontFamily:'cursive'}}>
+<th >Hospital</th>
+<th   >Total Bed</th>
+<th  >Vacant Bed</th>
+<th  >Updated At</th>
+            </thead>
+            <tbody>
             {arr}
-              </div> 
-              </div> 
+            </tbody>
+              </table> 
+               
+            </div>
             </div>
         )
     }
