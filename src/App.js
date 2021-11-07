@@ -18,17 +18,7 @@ function App() {
   return (
     <StyleRoot>
     <div className="App" style={{width:'100%'}}>
-     <Route exact path='./' component={Homepage}/>
-  <Route exact path='/bed' component={delhi}/>
-  
-     <Route exact path='/dashboard' component={Dashboard}/>
-     <Route exact path='/personaldashboard' component={PersonalDashboard}/>
-     <Route exact path='/video/:videoTitle' component={VideoPlayer}/>  
-    <Route exact path='/signIn' component={signin}/>
-    <Route exact path='/signUp' component={signup}/>
-    <Route exact path='/upload' component={upload}/>
-    <Route exact path='/signOut' component={signOut}/>
-    <Route exact path='/data/:id' component={HospitalAddress}/>
+     <h1>hlo</h1>
     </div>
     </StyleRoot>
   );
