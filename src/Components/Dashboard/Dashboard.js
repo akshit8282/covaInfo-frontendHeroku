@@ -37,7 +37,7 @@ class Dashboard extends React.Component {
   render() {
    
     const path='https://covainfo-2.herokuapp.com/api/videos/video_thumbnails/'
-const pathvid='http://127.0.0.1:3000/api/videos/'
+
     const videos = this.state.videoList.length!=0?this.state.videoList.map(video => {
       return (
         <div className=" video col-xs-12 col-sm-12 col-md-3 col-lg-4 py-3 container1" key={video._id}>

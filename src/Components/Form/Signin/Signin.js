@@ -68,7 +68,37 @@ export class Signin extends Component {
       if (this.state.redirect) return window.location.replace('./');
         return (
           <div className="signin">
-            hey
+            <Form onSubmit={this.onSubmitHandler.bind(this)}>
+            <h3 className="text-center text-info">Login</h3>
+            <div className="form-group">
+              <label htmlFor="email" className="text-info">Email:</label><br />
+              <input
+                id="email"
+                className="form-control"
+                type="email"
+                name="email"
+                placeholder="example@domain.com"
+                onChange={this.emailInputChangeHandler}
+                required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password" className="text-info">Password:</label><br />
+              <input
+                id="password"
+                className="form-control"
+                type="password"
+                name="password"
+                placeholder="********"
+                onChange={this.passwordInputChangeHandler}
+                required />
+            </div>
+            <div className="d-flex justify-content-between align-items-end">
+              <button onClick={this.onSubmitHandler} className="btn btn-info btn-md" type="button">Submit</button>
+              <Link to="/signUp" className="text-info">Sign Up here</Link>
+            </div>
+          </Form>
+          <span style={{color:'red'}}>
+          {this.state.error!=''?this.state.error:null}</span>
           </div>
         )
     }
