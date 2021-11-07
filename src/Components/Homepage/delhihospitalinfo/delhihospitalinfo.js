@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 import './delhihospitalinfo.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
@@ -19,8 +19,8 @@ function delhihospitalinfo() {
                 <br></br>and All the information well updated and taken from<br></br> official Government Site.<br></br>
                 Click down to View All Info!!
                 </h4>
-                <a style={{ display:'flex',justifyContent:'center',textDecoration:"none",fontFamily:'serif',fontSize:'30px',}} href="/bed"><span style={{border:'2px solid black',borderRadius:"30px",width:'100px',textAlign:'center',backgroundColor:'black',color:"white"}}><FontAwesomeIcon icon={faArrowAltCircleRight} />
-</span></a>
+                <Link style={{ display:'flex',justifyContent:'center',textDecoration:"none",fontFamily:'serif',fontSize:'30px',}} to="/bed"><span style={{border:'2px solid black',borderRadius:"30px",width:'100px',textAlign:'center',backgroundColor:'black',color:"white"}}><FontAwesomeIcon icon={faArrowAltCircleRight} />
+</span></Link>
             </div>
 
 

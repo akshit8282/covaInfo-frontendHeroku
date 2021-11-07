@@ -2,6 +2,7 @@ import React from 'react'
 import './VideoSection.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
+import {Link} from 'react-router-dom'
 
 function VideoSection() {
     return (
@@ -25,7 +26,7 @@ function VideoSection() {
 
             <h3 style={{}}>Upload Your Own Video</h3>
            
-            <a href="/upload" style={{color:'inherit'}}><i  className="fas fa-file-video fa-4x" ></i></a>
+            <Link to="/upload" style={{color:'inherit'}}><i  className="fas fa-file-video fa-4x" ></i></Link>
             </div>
             </div>
            </div>
