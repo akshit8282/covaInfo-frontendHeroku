@@ -18,7 +18,7 @@ function App() {
   return (
     <StyleRoot>
     <div className="App" style={{width:'100%'}}>
-     <Route exact path='/' component={Homepage}/>
+     <Route exact path='./' component={Homepage}/>
   <Route exact path='/bed' component={delhi}/>
   
      <Route exact path='/dashboard' component={Dashboard}/>
