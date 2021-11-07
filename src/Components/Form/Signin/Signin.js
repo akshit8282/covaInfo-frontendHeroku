@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Form from '../Form'
-import {Link,Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './signIn.css'
 
@@ -65,7 +65,7 @@ export class Signin extends Component {
         });
       }
     render() {
-      if (this.state.redirect) return <Redirect to="/" />;
+      if (this.state.redirect) return window.location.replace('/');
         return (
           <div className="signin">
             <Form onSubmit={this.onSubmitHandler.bind(this)}>
