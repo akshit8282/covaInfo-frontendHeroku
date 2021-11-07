@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import Hospitaladdress from './hospitaladdress/hospitaladdress'
+
 import Navbar from '../Navbar/Navbar'
 import axios from 'axios'
-import './delhi.css';
-import Backdrop from '../Backdrop/Backdrop'
 export class Delhi extends Component {
     
     state={
