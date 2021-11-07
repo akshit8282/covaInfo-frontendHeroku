@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Progress } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
-import { Redirect } from 'react-router-dom';
+
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css';
 import './Upload.css';
@@ -118,7 +118,9 @@ fetch('http://127.0.0.1:3000/api/upload', requestOptions)
 
   render() {
 
-    if (!localStorage.getItem('userTokenTime')) return <Redirect to="/signIn" />
+    if (!localStorage.getItem('userTokenTime')) {
+      window.location.replace('/signin')
+    }
    
     return (
     
