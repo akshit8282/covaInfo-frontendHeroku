@@ -18,7 +18,8 @@ function App() {
   return (
     <StyleRoot>
     <div className="App" style={{width:'100%'}}>
-     <h1>hlo</h1>
+     <Route exact path='/' component={Homepage}/>
+ 
     </div>
     </StyleRoot>
   );
