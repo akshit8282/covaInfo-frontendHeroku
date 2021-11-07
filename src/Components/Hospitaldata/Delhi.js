@@ -11,8 +11,7 @@ export class Delhi extends Component {
     componentDidMount=()=>{
         axios.get('https://coronabeds.jantasamvad.org/covid-info.js', {headers: {'Access-Control-Allow-Origin': '*'},
     }).then(res=>{
-        //console.log(res.data);
-     //console.log((res.data.split("=")[1]));
+       
 var obj=res.data.split("=")[1];
 obj=obj.split(";")[0];
 var data=JSON.parse(obj).beds;
@@ -26,33 +25,12 @@ var data=JSON.parse(obj).beds;
 }).catch(err=>{
     console.log(err);
 })
-//information of hospital
+
 
     }
     render() {
         let url=`/data/`;
-/*const getinfo=(key)=>{
-    axios.get('https://cors-anywhere.herokuapp.com/https://coronabeds.jantasamvad.org/covid-facilities.js', {headers: {'Access-Control-Allow-Origin': '*'},
-}).then(res=>{
-    //console.log(res.data);
- //console.log((res.data.split("=")[1]));
-var obj=res.data.split("= ")[1];
-obj=obj.split(";")[0];
-var data=JSON.parse(obj);
-var ele;
-Object.keys(data).map(k=>{
-    if(k==key){
 
-     ele=data[k];
-        }
-})
- this.setState({
-address:ele
- });
- console.log(this.state.address);
-
-}).catch()
-}*/
 
 
 

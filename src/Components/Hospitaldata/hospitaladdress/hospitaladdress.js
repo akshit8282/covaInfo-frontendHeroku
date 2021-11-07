@@ -10,11 +10,11 @@ const Hospitaladdress = (props) => {
     const path=props.location.pathname.split('/')[2];
     
     useEffect(async () => {
-        // Update the document title using the browser API
+        
         await axios.get('https://coronabeds.jantasamvad.org/covid-facilities.js', {headers: {'Access-Control-Allow-Origin': '*'},
 }).then(res=>{
     
- //console.log((res.data.split("=")[1]));
+
 
 var obj=res.data.split("= ")[1];
 obj=obj.split(";")[0];
@@ -65,11 +65,7 @@ Object.keys(data).map(k=>{
         </div>
     );
     return <div style={{backgroundColor:'black',height:'100vh',display:'flex',alignItems:'center',justifyContent:'center'}}>{model}</div>
-    /*return(
-<div>
-    <h1>hlo</h1>
-</div>
-    );*/
+    
 }
 
 export default Hospitaladdress

@@ -40,7 +40,7 @@ export class VaccineCenter extends Component {
             this.state.result.map(res=>{
                return(res.available_capacity!=0?
                 <MediaQuery minWidth={1000}>
-                {/* You can also use a function (render prop) as a child */}
+                
                 {(matches) =>
                   matches
                     ? <tr style={{borderBottom:'1px solid',padding:'10px'}}>

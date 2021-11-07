@@ -26,12 +26,12 @@ class Upload extends React.Component {
     } else {
       let err = '';
       for (let i = 0; i < files.length; i++) {
-        if (files[i].size > 52428800) { // 50 MB
+        if (files[i].size > 52428800) { 
           err += files[i].name + ', ';
         }
       }
       if (err !== '') {
-        // error caught
+        
         event.target.value = null;
         toast.error(err + " is/are too large. Please select file size < 50Mb");
       }
@@ -65,26 +65,10 @@ class Upload extends React.Component {
     
   }
 }
-//using fetch api
 
-/*const requestOptions = {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json','Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('userTokenTime')).token },
-  
-  body: new URLSearchParams(data),
-  options:options
-};
-fetch('http://127.0.0.1:3000/api/upload', requestOptions)
-  .then(response => {
-    console.log(response)
-    
-   
-  })
-  .catch(err=>{
-   console.log(err);
-  })
-*/
-//console.log(JSON.parse(localStorage.getItem('userTokenTime')).token);
+
+
+
     axios.post('https://covainfo-2.herokuapp.com/api/upload', data, {
       headers: {
         'Content-Type': 'application/json',
@@ -99,19 +83,10 @@ fetch('http://127.0.0.1:3000/api/upload', requestOptions)
         ok:false,
         ee:err
       })
-        console.log(err);
+        
       toast.error(`Upload Fail with status: ${err.statusText}`);
     });
-    setTimeout(() => {  console.log("World!"); }, 100000);
-    if(this.state.ok&&this.state.ee==""){
-      
-     
-     
-      this.setState({
-        loaded:100
-      })
-     
-    }
+    
    
   }
  

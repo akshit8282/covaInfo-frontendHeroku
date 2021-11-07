@@ -1,5 +1,5 @@
 import React from 'react'
-import firstaid from '../../../images/firstaid.png'
+
 import './delhihospitalinfo.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
@@ -31,4 +31,3 @@ function delhihospitalinfo() {
 }
 
 export default delhihospitalinfo
-/*style={{display:"block",margin:"auto",width: '138px',height: '50px',backgroundColor:'grey'}}*/
