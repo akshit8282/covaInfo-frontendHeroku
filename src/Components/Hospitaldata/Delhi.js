@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import Navbar from '../Navbar/Navbar'
 import axios from 'axios'
+import Link from 'react-router-dom'
 export class Delhi extends Component {
     
     state={
@@ -38,7 +39,7 @@ var data=JSON.parse(obj).beds;
 
 const arr=this.state.result!=null?(Object.keys(this.state.result).map(key=>{
 return <tr  style={{fontSize:'1.1rem'}} >
-    <td ><a  style={{color:'white'}} href={url+key}  key={key}>{key.split(",")}</a></td>
+    <td ><Link  style={{color:'white'}} to={url+key}  key={key}>{key.split(",")}</Link></td>
     <td >{this.state.result[key].total}</td>
     <td >{this.state.result[key].vacant}</td>
     <td >{this.state.result[key].last_updated_at}</td>
