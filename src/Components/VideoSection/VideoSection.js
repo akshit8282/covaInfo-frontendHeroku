@@ -3,8 +3,10 @@ import './VideoSection.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 import {Link} from 'react-router-dom'
+import {useState} from 'react'
 
 function VideoSection() {
+    const loggedIn= localStorage.getItem('userTokenTime')
     return (
         <div>
             <br></br>
@@ -25,8 +27,10 @@ function VideoSection() {
             <p>There are so many difficult things we're living through in the world today,<br></br> so many horrible events, but we cannot let them stop us. No matter what happens, I feel you must move forward with optimism and not get totally sideswiped.</p>
 
             <h3 style={{}}>Upload Your Own Video</h3>
+           {loggedIn? <Link to="/upload" style={{color:'inherit'}}><i  className="fas fa-file-video fa-4x" ></i></Link>:
+            <Link to="/signin" style={{color:'inherit'}}><i  className="fas fa-file-video fa-4x" ></i></Link>
+           }
            
-            <Link to="/upload" style={{color:'inherit'}}><i  className="fas fa-file-video fa-4x" ></i></Link>
             </div>
             </div>
            </div>

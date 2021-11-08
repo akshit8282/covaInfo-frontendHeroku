@@ -2,13 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import './hospitaladdress.css'
-
+import {useLocation} from 'react-router-dom'
 
 const Hospitaladdress = (props) => {
     const [address, setaddress] = useState({});
     const [loading, setloading] = useState(true);
-    const path=props.location.pathname.split('/')[2];
     
+    const a=useLocation();
+    const path=a.pathname.split('/')[2].split('%20').join(" ");
+   
     useEffect(async () => {
         
         await axios.get('https://cors-anywhere.herokuapp.com/https://coronabeds.jantasamvad.org/covid-facilities.js', {headers: {'Access-Control-Allow-Origin': '*'},
@@ -28,7 +30,7 @@ Object.keys(data).map(k=>{
 
         }
 })
-
+console.log(ele)
  setaddress(ele);
  setloading(false);
  console.log(ele);
@@ -36,7 +38,7 @@ Object.keys(data).map(k=>{
 }).catch()
       },[]);
 
-    const arr=Object.keys(address).map(a=>{
+    const arr=address!=undefined?Object.keys(address).map(a=>{
         return <div > 
         
     {a=="location"?null:a=="contact_numbers"?<div>
@@ -52,7 +54,7 @@ Object.keys(data).map(k=>{
                 
             
         </div>
-    })
+    }):null;
     const model=loading==true?(<div class="loader"></div>): (
         
         <div style={{backgroundColor:"lightcyan",height:"90vh",width:'104vw',display:'flex',flexDirection:'column'}}>
