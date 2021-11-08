@@ -11,7 +11,7 @@ const Hospitaladdress = (props) => {
     
     useEffect(async () => {
         
-        await axios.get('https://coronabeds.jantasamvad.org/covid-facilities.js', {headers: {'Access-Control-Allow-Origin': '*'},
+        await axios.get('https://cors-anywhere.herokuapp.com/https://coronabeds.jantasamvad.org/covid-facilities.js', {headers: {'Access-Control-Allow-Origin': '*'},
 }).then(res=>{
     
 

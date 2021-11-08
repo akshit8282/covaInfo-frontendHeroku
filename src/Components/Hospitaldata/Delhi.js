@@ -9,7 +9,7 @@ export class Delhi extends Component {
         
     }
     componentDidMount=()=>{
-        axios.get('https://coronabeds.jantasamvad.org/covid-info.js', {headers: {'Access-Control-Allow-Origin': '*'},
+        axios.get('https://cors-anywhere.herokuapp.com/https://coronabeds.jantasamvad.org/covid-info.js', {headers: {'Access-Control-Allow-Origin': '*'},
     }).then(res=>{
        
 var obj=res.data.split("=")[1];

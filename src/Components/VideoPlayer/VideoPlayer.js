@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-
+import {  } from 'react-router-dom';
+import WithRouter from '../HOC/WithRouter/WithRouter'
 import videojs from 'video.js';
 import './videojs.css';
 
@@ -13,7 +13,7 @@ class VideoPlayer extends React.Component {
       videoJsOptions: null
     }
   }
-
+  
   componentDidMount() {
     axios.get('https://covainfo-2.herokuapp.com/api/videoList', {
       headers: {
@@ -21,9 +21,10 @@ class VideoPlayer extends React.Component {
        
       }
     }).then(res => {
-        console.log(res)
+        console.log(res.data)
+       console.log(this.props)
       res.data.map(video => {
-        if (video.upload_title === this.props.match.params.videoTitle) {
+        if (video.upload_title === this.props.videoTitle) {
           console.log(video.video_path.trim().split("\\")[2])
           this.setState({
             loaded: true,
@@ -70,4 +71,4 @@ class VideoPlayer extends React.Component {
   }
 }
 
-export default VideoPlayer;
+export default WithRouter(VideoPlayer);
