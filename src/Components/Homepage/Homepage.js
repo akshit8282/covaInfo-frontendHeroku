@@ -26,28 +26,28 @@ export class Homepage extends Component {
         dateIn:'laoding'
     }
     componentDidMount=()=>{
-        axios.get('https://cors-anywhere.herokuapp.com/https://2019ncov.asia/api/cdr', {headers: {'Access-Control-Allow-Origin': '*'},
+        axios.get('https://cors-anywhere.herokuapp.com/https://api.covid19api.com/summary', {headers: {'Access-Control-Allow-Origin': '*'},
           }).then(res=>{
            
-                const d = new Date( res.data.last_updated );
+                const d = new Date(res.data.Global.Date );
 let date = d.getHours() + ":" + d.getMinutes() + ", " + d.toDateString();
 
             this.setState({
-                Confirmed:res.data.results[0].confirmed,
-                deaths:res.data.results[1].deaths,
+                Confirmed:res.data.Global.TotalConfirmed,
+                deaths:res.data.Global.TotalDeaths,
                 date:date
             })
         }).catch()
-        axios.get('https://cors-anywhere.herokuapp.com/https://2019ncov.asia/api/country_region', {headers: {'Access-Control-Allow-Origin': '*'},
+        axios.get('https://cors-anywhere.herokuapp.com/https://api.covid19api.com/summary', {headers: {'Access-Control-Allow-Origin': '*'},
     }).then(res=>{
      
-         console.log(res.data.results[93].confirmed);
-         const d = new Date( res.data.results[93].last_updated);
+        
+         const d = new Date( res.data.Countries[76].Date);
          let date = d.getHours() + ":" + d.getMinutes() + ", " + d.toDateString();
          
          this.setState({
-            confirmedIn:res.data.results[93].confirmed,
-            deathsIn:res.data.results[93].deaths,
+            confirmedIn:res.data.Countries[76].TotalConfirmed,
+            deathsIn:res.data.Countries[76].TotalDeaths,
             dateIn:date
         })
 
