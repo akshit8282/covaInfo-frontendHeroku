@@ -75,7 +75,7 @@ class SignIn extends React.Component {
   }
 
   render() {
-    if (this.state.redirect) return window.location.replace('/signin');
+    if (this.state.redirect) return window.location.replace('/signIn');
     return (
       <div className="signup">
       <Form onSubmit={this.onSubmitHandler.bind(this)}>
