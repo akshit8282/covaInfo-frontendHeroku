@@ -4,6 +4,12 @@ import axios from 'axios'
 import './hospitaladdress.css'
 import {useLocation} from 'react-router-dom'
 import {Link} from 'react-router-dom'
+import Navbar from '../../Navbar/Navbar';
+import doctor from '../../../images/doctoraddress.png';;
+
+
+
+
 
 const Hospitaladdress = (props) => {
     const [address, setaddress] = useState({});
@@ -42,13 +48,14 @@ console.log(ele)
     const arr=address!=undefined?Object.keys(address).map(a=>{
         return <div > 
         
-    {a=="location"?null:a=="contact_numbers"?<div>
-            <h2><b>{a}:-</b></h2>
-            <h6>{address[a][0]}</h6>
-            <h6>{address[a][1]}</h6>
-        </div>:<div><h2><b>{a}</b> :-</h2>
-        <p>{address[a]}</p>
-        </div>}
+    {a=="location"?null:a=="contact_numbers"?<div><table className="tabledesign">
+            <tr><td><b>{a}</b></td>&nbsp;&nbsp;&nbsp;<td>
+            {address[a][0]}
+            </td></tr></table>
+        </div>:<div><table className="tabledesign"><tr><td><b>{a}</b></td>&nbsp;&nbsp;&nbsp;
+        <td>{address[a]}</td>
+        </tr>
+        </table></div>}
         
                 
                 
@@ -56,18 +63,24 @@ console.log(ele)
             
         </div>
     }):null;
-    const model=loading==true?(<div class="loader"></div>): (
+    const model=loading==true?(<div className="loadingScreen"><div className="spinner-grow text-"></div><div className="spinner-grow text-info"></div><div className="spinner-grow text-dark"></div></div>): (
         
-        <div style={{backgroundColor:"lightcyan",height:"90vh",width:'104vw',display:'flex',flexDirection:'column'}}>
-        <h1 style={{textAlign:'center'}}>{path}</h1>
-            {arr}
-            <div style={{display:'flex',justifyContent:'center'}}>
-            
-            <button style={{width:"80px",borderRadius:"10px",backgroundColor:"darkblue"}}><Link style={{textDecoration:"none",color:"white"}} to="/bed">Back</Link></button>
-        </div>
-        </div>
+        <div> <Navbar/>
+        <div style={{margin:'15%',display:'flex',alignItems:'center',justifyContent:'center',alignContent:'center'}}>
+    <div style={{height:'50%',width:'50%'}}><img style={{height:"100%",width:"100%"}} src={doctor}/></div>
+    <div className="address">
+    <h3>{path}</h3>
+    {arr}
+    
+    </div>
+            </div><div style={{display:'flex',justifyContent:"center",margin:'-12%'}}>
+            <button className='backbutton'><Link className="link" to="/bed">Back</Link></button></div>
+            </div>
+       
+    
+
     );
-    return <div style={{backgroundColor:'black',height:'100vh',display:'flex',alignItems:'center',justifyContent:'center'}}>{model}</div>
+    return (<div>{model}</div>)
     
 }
 

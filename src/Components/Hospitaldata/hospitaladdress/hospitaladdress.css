@@ -1,25 +1,47 @@
 
-.loader {
-    border: 40px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid blue;
-    border-right: 40px solid green;
-    border-bottom: 20px solid red;
-    border-left: 20px solid whitesmoke;
-    width: 120px;
-    
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-    
+
+  .loadingScreen{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .address{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);;
+    width: 100%;
+   padding: 5%;
+   margin-top: 5%;
   }
   
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
+  .tabledesign  td {
+    border-collapse: collapse;
+    border-bottom:0.5px solid gray;
+  border-spacing: 0;
+    word-wrap: break-word;
+    overflow-x:auto;
+   width: 60%;
+}
+.backbutton{
+  border-radius:30%;
+  border:2px solid red;
+  width:10%;
+  margin-bottom:2%;
+  background-color: white;
+  font-size: large;
+  color:red
+}
+.link{
+  text-decoration:none;
+  color:red;
+}
+.backbutton:hover{
+  background-color: red;
   
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+ .link:hover{
+  color: white;
+  text-decoration:none;
+}
