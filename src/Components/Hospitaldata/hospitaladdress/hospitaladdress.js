@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import './hospitaladdress.css'
 import {useLocation} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const Hospitaladdress = (props) => {
     const [address, setaddress] = useState({});
@@ -62,7 +63,7 @@ console.log(ele)
             {arr}
             <div style={{display:'flex',justifyContent:'center'}}>
             
-            <button style={{width:"80px",borderRadius:"10px",backgroundColor:"darkblue"}}><a style={{textDecoration:"none",color:"white"}} href="/bed">Back</a></button>
+            <button style={{width:"80px",borderRadius:"10px",backgroundColor:"darkblue"}}><Link style={{textDecoration:"none",color:"white"}} to="/bed">Back</Link></button>
         </div>
         </div>
     );
